@@ -10,7 +10,7 @@
   display: flex;
 }
 .header_Logo {
-  font-size: 2.3rem;
+  font-size: 2.1rem;
   font-weight: bolder;
   text-align: left;
   padding-right: 0.8rem;
@@ -20,7 +20,7 @@
   margin-left: 4rem;
 }
 .header_txt {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-weight: 500;
   color: #000;
   display: inline-block;
@@ -34,11 +34,15 @@
   display: flex;
 }
 
-.header_blog,
-.header_life {
+.header_blog {
   margin-top: 1rem;
   padding: 0 1.2rem 0 1.2rem;
-  transition: transform 200ms;
+  transition: all 200ms;
+}
+.header_life {
+  transition: all 200ms;
+  margin-top: 0.3rem;
+  padding: 0 1.2rem 0 1.2rem;
 }
 .header_other {
   margin-top: 1rem;
@@ -46,11 +50,9 @@
 }
 
 .header_blog :hover {
-  transform: scale(1.1);
   cursor: pointer;
 }
 .header_life :hover {
-  transform: scale(1.1);
   cursor: pointer;
 }
 .header_other :hover {

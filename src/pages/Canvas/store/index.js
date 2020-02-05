@@ -1,4 +1,8 @@
 import reducer from "./reducer";
-import { changeSceneAction } from "./actionCreator";
+import {
+  changeSceneAction,
+  addAlliesAction,
+  addAnemiesAction
+} from "./actionCreator";
 
-export { reducer, changeSceneAction };
+export { reducer, changeSceneAction, addAlliesAction, addAnemiesAction };

@@ -1,6 +1,8 @@
 import React from "react";
 import style from "./style.module.css";
 import ChangeScene from "./ChangeScene";
+import AddAllies from "./AddAllies";
+import AddAnemies from "./AddAnemy";
 import { IconFont } from "../../utils";
 
 const Controller = () => {
@@ -8,13 +10,15 @@ const Controller = () => {
     <div className={style.control}>
       <div className={style.mulu}>
         <IconFont
-          type='icon-mulu'
+          type='iconmulu'
           style={{ fontSize: 30, marginTop: 8, marginRight: 10 }}
         />
         <span>控制器</span>
       </div>
       <div className={style.list}>
         <ChangeScene />
+        <AddAllies />
+        <AddAnemies />
       </div>
     </div>
   );

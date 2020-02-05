@@ -12,6 +12,10 @@
 
 .list {
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  margin-top: 10px;
+}
+
+.list button {
+  margin-top: 20px;
 }

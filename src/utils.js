@@ -2,7 +2,7 @@ import { Icon } from "antd";
 import { Object3D, BoxGeometry, MeshPhongMaterial, Mesh } from "three";
 
 export const IconFont = Icon.createFromIconfontCN({
-  scriptUrl: "//at.alicdn.com/t/font_1362423_5e5jpnxrnaq.js"
+  scriptUrl: "//at.alicdn.com/t/font_1628564_4gxrmqw0jst.js"
 });
 
 export function Plane(color) {
