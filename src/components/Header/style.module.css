@@ -1,0 +1,58 @@
+.header {
+  display: flex;
+  background-color: #fff;
+  overflow: hidden;
+  height: 4rem;
+  border-bottom: 1px solid #000;
+  justify-content: space-around;
+}
+.header_left {
+  display: flex;
+}
+.header_Logo {
+  font-size: 2.3rem;
+  font-weight: bolder;
+  text-align: left;
+  padding-right: 0.8rem;
+  border-right: 0.1rem solid #333;
+  color: #000;
+  text-shadow: 0px 2px 3px #bbb;
+  margin-left: 4rem;
+}
+.header_txt {
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: #000;
+  display: inline-block;
+  padding-left: 0.8rem;
+}
+.header_txt p {
+  margin-top: 0.8rem;
+  margin-bottom: 0.1rem;
+}
+.header_Option {
+  display: flex;
+}
+
+.header_blog,
+.header_life {
+  margin-top: 1rem;
+  padding: 0 1.2rem 0 1.2rem;
+  transition: transform 200ms;
+}
+.header_other {
+  margin-top: 1rem;
+  padding-left: 1.2rem;
+}
+
+.header_blog :hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+.header_life :hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+.header_other :hover {
+  cursor: not-allowed;
+}

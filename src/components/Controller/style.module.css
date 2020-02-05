@@ -1,0 +1,17 @@
+.control {
+  width: 20%;
+  margin: 20px;
+}
+
+.mulu {
+  display: flex;
+  font-size: 28px;
+  font-weight: 600;
+  justify-content: center;
+}
+
+.list {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}

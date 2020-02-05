@@ -1,26 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import Canvas from "./pages/Canvas";
+import Controller from "./components/Controller/index";
+import { Provider } from "react-redux";
+import store from "./store";
+import "./App.css";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+      <div className='page'>
+        <Header />
+        <div style={{ flex: 1, display: "flex" }}>
+          <Canvas />
+          <Controller />
+        </div>
+      </div>
+      <Footer />
+    </Provider>
   );
-}
-
+};
 export default App;
