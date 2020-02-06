@@ -3,6 +3,8 @@ import style from "./style.module.css";
 import ChangeScene from "./ChangeScene";
 import AddAllies from "./AddAllies";
 import AddAnemies from "./AddAnemy";
+import Startfight from "./Startfight";
+import CanclePlane from "./CanclePlane";
 import { IconFont } from "../../utils";
 
 const Controller = () => {
@@ -19,6 +21,8 @@ const Controller = () => {
         <ChangeScene />
         <AddAllies />
         <AddAnemies />
+        <Startfight />
+        <CanclePlane />
       </div>
     </div>
   );

@@ -1,10 +1,11 @@
 import { fromJS } from "immutable";
-import { CHANGE_SCENE, ADD_ALLIES, ADD_ANEMIES } from "./constant";
+import { CHANGE_SCENE, ADD_ALLIES, ADD_ANEMIES, START_FIGHT } from "./constant";
 
 const defaultState = fromJS({
   scene: ["sea", "sand"],
   allies: [],
-  anemies: []
+  anemies: [],
+  startfight: false
 });
 
 export default (state = defaultState, action) => {
@@ -15,6 +16,8 @@ export default (state = defaultState, action) => {
       return state.set("allies", action.data);
     case ADD_ANEMIES:
       return state.set("anemies", action.data);
+    case START_FIGHT:
+      return state.set("startfight", action.data);
     default:
       return state;
   }

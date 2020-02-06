@@ -1,20 +1,27 @@
 import React, { useState } from "react";
-import { Modal, Button } from "antd";
+import { Modal, Button, message } from "antd";
 import { useDispatch, useSelector } from "react-redux";
 import {
-  changeSceneAction,
+  addAlliesAction,
+  addAnemiesAction,
   startFightAction
 } from "../../../pages/Canvas/store";
 
 const ChangeScene = () => {
-  const path = useSelector(state => {
-    return state.getIn(["canvas", "scene"]);
-  }).toJS();
+  const allies = useSelector(state => state.getIn(["canvas", "allies"])).toJS();
+  const anemies = useSelector(state =>
+    state.getIn(["canvas", "anemies"])
+  ).toJS();
   const [visi, setVisi] = useState(false);
   const dispatch = useDispatch();
   function handleOk() {
-    dispatch(changeSceneAction(path.reverse()));
-    dispatch(startFightAction(false));
+    if (allies.length || anemies.length) {
+      dispatch(addAlliesAction([]));
+      dispatch(addAnemiesAction([]));
+      dispatch(startFightAction(false));
+    } else {
+      message.warning("还未添加战机，无需删除");
+    }
     setVisi(false);
   }
   return (
@@ -25,7 +32,7 @@ const ChangeScene = () => {
         }}
         type='primary'
       >
-        变更场景
+        删除战机
       </Button>
       <Modal
         title='有一项操作需要您确认'
@@ -35,7 +42,7 @@ const ChangeScene = () => {
           setVisi(false);
         }}
       >
-        <p>确定更换场景吗!</p>
+        <p>确定删除战机吗？</p>
       </Modal>
     </>
   );

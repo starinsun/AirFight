@@ -2,7 +2,14 @@ import reducer from "./reducer";
 import {
   changeSceneAction,
   addAlliesAction,
-  addAnemiesAction
+  addAnemiesAction,
+  startFightAction
 } from "./actionCreator";
 
-export { reducer, changeSceneAction, addAlliesAction, addAnemiesAction };
+export {
+  reducer,
+  changeSceneAction,
+  addAlliesAction,
+  addAnemiesAction,
+  startFightAction
+};

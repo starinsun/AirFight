@@ -5,6 +5,7 @@ import Box from "../../components/Box";
 import Allies from "../../components/alliesPlane/index";
 import Anemy from "../../components/anemyPlane/index";
 import Controller from "../../components/Controller/index";
+import Bullet from "../../components/bullet";
 import Stats from "stats.js";
 import { useSelector } from "react-redux";
 
@@ -35,6 +36,9 @@ export default () => {
   const anemies = useSelector(state =>
     state.getIn(["canvas", "anemies"])
   ).toJS();
+  const startfight = useSelector(state =>
+    state.getIn(["canvas", "startfight"])
+  );
 
   return (
     <div style={{ flex: 1, display: "flex" }}>
@@ -65,6 +69,29 @@ export default () => {
                 rotation={item.rotation}
               />
             ))
+          : null}
+        {anemies.length && allies.length
+          ? anemies.map((item, key) => {
+              if (key % 2 === 1) {
+                return (
+                  <Bullet
+                    key={item.id}
+                    position={item.position}
+                    target={allies[key].position}
+                    startfight={startfight}
+                  />
+                );
+              } else {
+                return (
+                  <Bullet
+                    key={item.id}
+                    position={allies[key].position}
+                    target={item.position}
+                    startfight={startfight}
+                  />
+                );
+              }
+            })
           : null}
       </Canvas>
       <Controller />
