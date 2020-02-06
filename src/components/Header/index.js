@@ -2,9 +2,12 @@ import React, { memo } from "react";
 import style from "./style.module.css";
 import { IconFont } from "../../utils";
 import { useHistory } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { startFightAction } from "../../pages/Canvas/store";
 
 const Header = () => {
   const nav = useHistory();
+  const dispatch = useDispatch();
   return (
     <div className={style.header}>
       <div className={style.header_left}>
@@ -31,7 +34,8 @@ const Header = () => {
             type='iconweibiaoti-_fuzhi-copy-copy-copy'
             style={{ fontSize: 100 }}
             onClick={() => {
-              nav.push("/admin");
+              dispatch(startFightAction(false));
+              nav.push("/admin/console");
             }}
           />
         </div>
