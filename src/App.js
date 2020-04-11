@@ -7,7 +7,10 @@ import { Provider } from "react-redux";
 import store from "./store";
 import "./App.css";
 import { BrowserRouter as Router, Route } from "react-router-dom";
-
+/**
+ * 首先footer是不需要改变的，因此把Router里面只有Header和主体
+ * 目前先考虑canvas
+ */
 const App = () => {
   return (
     <Provider store={store}>
