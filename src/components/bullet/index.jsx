@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { useFrame } from "react-three-fiber";
 
-function Bullet(props) {
+export default function Bullet(props) {
   const mesh = useRef();
   const { startfight, position, target } = props;
   function workdis(target, position) {
@@ -29,5 +29,3 @@ function Bullet(props) {
     </mesh>
   );
 }
-
-export default Bullet;

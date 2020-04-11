@@ -18,7 +18,6 @@ const App = () => {
           <Route path='/admin' component={System} />
         </div>
       </Router>
-
       <Footer />
     </Provider>
   );

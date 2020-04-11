@@ -13,22 +13,20 @@ const System = () => {
     stats.domElement.style.cssText = "display: none";
   }, []);
   return (
-    <Layout style={{ minHeight: "100vh" }}>
+    <Layout>
       <Sider
         collapsible
         collapsed={collapsed}
-        onCollapse={collapsed => {
+        onCollapse={(collapsed) => {
           setCollapsed(collapsed);
-        }}
-      >
+        }}>
         <div className='logo' />
         <Menu theme='dark' defaultSelectedKeys={["1"]} mode='inline'>
           <Menu.Item
             key='1'
             onClick={() => {
               nav.push("/admin/console");
-            }}
-          >
+            }}>
             <Icon type='pie-chart' />
             <span>工作台</span>
           </Menu.Item>
@@ -36,8 +34,7 @@ const System = () => {
             key='2'
             onClick={() => {
               nav.push("/admin/network");
-            }}
-          >
+            }}>
             <Icon type='book' />
             <span>神经网络训练</span>
           </Menu.Item>
@@ -45,8 +42,7 @@ const System = () => {
             key='3'
             onClick={() => {
               nav.push("/admin/manage");
-            }}
-          >
+            }}>
             <Icon type='instagram' />
             <span>战机信息管理</span>
           </Menu.Item>
@@ -54,8 +50,7 @@ const System = () => {
             key='6'
             onClick={() => {
               nav.push("/admin/nash");
-            }}
-          >
+            }}>
             <Icon type='camera' />
             <span>纳什均衡求解</span>
           </Menu.Item>
@@ -63,8 +58,7 @@ const System = () => {
             key='7'
             onClick={() => {
               nav.push("/admin/other");
-            }}
-          >
+            }}>
             <Icon type='team' />
             <span>更多</span>
           </Menu.Item>
