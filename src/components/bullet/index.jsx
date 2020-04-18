@@ -8,7 +8,6 @@ export default function Bullet(props) {
     return position.map((item, key) => (target[key] - item) / 200);
   }
   let res = workdis(target, position);
-  console.log(res, target, position);
 
   useFrame(() => {
     if (startfight && position[0] > 0 && mesh.current.position.x > target[0]) {

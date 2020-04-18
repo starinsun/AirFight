@@ -74,6 +74,8 @@ export default () => {
                 id={item.id}
                 position={item.position}
                 rotation={item.rotation}
+                direction={item.direction}
+                time={item.time}
               />
             ))
           : null}
@@ -84,6 +86,8 @@ export default () => {
                 id={item.id}
                 position={item.position}
                 rotation={item.rotation}
+                direction={item.direction}
+                time={item.time}
               />
             ))
           : null}

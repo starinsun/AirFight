@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Modal, Button, message } from "antd";
 import { useDispatch, useSelector } from "react-redux";
-import { addAlliesAction } from "../../../pages/Canvas/store";
-import { allies1 } from "../../../mock";
+import { addAlliesAction, addAnemiesAction } from "../../pages/Canvas/store";
+import { allies3, allies2, anemies3, anemies2 } from "../../mock";
 
 const AddAllies = () => {
   const [visi, setVisi] = useState(false);
@@ -11,8 +11,13 @@ const AddAllies = () => {
     state.getIn(["canvas", "allies"])
   ).toJS();
   function handleOk() {
-    dispatch(addAlliesAction(allies1));
+    dispatch(addAlliesAction(allies2));
+    dispatch(addAnemiesAction(anemies2));
     setVisi(false);
+    setTimeout(() => {
+      dispatch(addAlliesAction(allies3));
+      dispatch(addAnemiesAction(anemies3));
+    }, 8888);
   }
   return (
     <>
@@ -20,10 +25,10 @@ const AddAllies = () => {
         onClick={() => {
           !confirmAllies.length
             ? setVisi(true)
-            : message.error("盟军已经添加，不用重新添加");
+            : message.error("情景已经创建，不用重新启动");
         }}
         type='primary'>
-        添加盟军
+        对抗情景
       </Button>
       <Modal
         title='有一项操作需要您确认'
@@ -32,7 +37,7 @@ const AddAllies = () => {
         onCancel={() => {
           setVisi(false);
         }}>
-        <p>确定添加盟军吗？</p>
+        <p>确定执行对抗情景吗？</p>
       </Modal>
     </>
   );

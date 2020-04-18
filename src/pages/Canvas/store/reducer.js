@@ -5,7 +5,7 @@ const defaultState = fromJS({
   scene: ["sea", "sand"],
   allies: [],
   anemies: [],
-  startfight: false
+  startfight: false,
 });
 
 export default (state = defaultState, action) => {
